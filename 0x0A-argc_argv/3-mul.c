@@ -2,23 +2,26 @@
 #include <stdlib.h>
 
 /**
- * main - multiply the args
- * @argc: Argument count
- * @argv: Array of argument strings
+ * main - Entry point
  *
- * Return: 0 for successful exit
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
+ * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	if (argc < 2)
+	int n, ex;
+
+	ex = 0;
+	if (argc != 3)
 	{
-		printf("Error");
+		printf("%s\n", "Error");
+		ex = 1;
 	}
 	else
 	{
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		n = atoi(argv[1]) * atoi(argv[2]);
+		printf("%i\n", n);
 	}
-
-	return (0);
+	return (ex);
 }
-
